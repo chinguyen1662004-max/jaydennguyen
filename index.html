@@ -449,188 +449,153 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
   }
 }
 
-/* ===== MOBILE FIX - COMMUNITY / KOC / BRANDS / TOOLS ===== */
+/* ===== MOBILE FINAL POLISH ===== */
 
 @media (max-width: 800px) {
 
-  /* 1. COMMUNITY: 700 - ẢNH - 300 CÙNG MỘT HÀNG */
+  /* 1. ẢNH CỘNG ĐỒNG: HIỂN THỊ TRỌN ẢNH */
   .community-row {
-    display: grid !important;
-    grid-template-columns: 0.8fr 1.4fr 0.8fr !important;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr) minmax(0, 0.85fr) !important;
+    justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
-    width: 100%;
+    justify-items: center !important;
+    gap: 6px !important;
   }
 
   .community-row .stat-chip {
-    min-width: 0;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
     width: 100%;
-    margin: 0 !important;
-    padding: 10px 3px;
-    text-align: center;
-    transform: none !important;
+    min-width: 0;
+    padding: 10px 2px !important;
+    box-sizing: border-box;
   }
 
-  .community-row .stat-chip strong {
-    display: block;
-    font-size: clamp(19px, 5vw, 27px);
-    line-height: 1.1;
-  }
-
+  .community-row .stat-chip strong,
   .community-row .stat-chip span {
-    display: block;
-    font-size: 8px;
-    line-height: 1.3;
-    overflow-wrap: break-word;
+    width: 100%;
+    text-align: center !important;
   }
 
   .community-row .community {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-width: 0;
     margin: 0 !important;
-    padding: 5px;
+    padding: 4px !important;
   }
 
   .community-row .media-box {
     width: 100%;
-    min-height: 0;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 0 !important;
+    background: #fff;
     overflow: hidden;
   }
 
   .community-row .media-box img {
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
     max-width: 100%;
-    max-height: none;
-    object-fit: cover;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center;
   }
 
-  /* 2. KOC: 3 NGƯỜI TRÊN - 4 NGƯỜI DƯỚI */
-  .koc-grid {
-    display: grid !important;
-    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-    gap: 10px !important;
-    align-items: start;
-  }
-
-  .koc-grid .koc {
-    min-width: 0;
-    width: auto;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  .koc-grid .koc:nth-child(-n+3) {
-    grid-column: span 4;
-  }
-
-  .koc-grid .koc:nth-child(n+4) {
-    grid-column: span 3;
-  }
-
-  .koc-photo {
-    width: 100%;
-  }
-
-  .koc-grid .koc input {
-    width: 100%;
-    min-width: 0;
-    padding: 7px 1px;
-    font-size: 9px;
-  }
-
-  /* 3. BRAND: 5 THƯƠNG HIỆU MỖI HÀNG */
+  /* 2. THƯƠNG HIỆU: 6 LOGO MỖI HÀNG */
   .brand-grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: 7px !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 6px !important;
   }
 
   .brand-grid .brand {
+    padding: 4px !important;
     min-width: 0;
-    width: 100%;
-    padding: 5px;
   }
 
   .brand-logo {
-    width: 100%;
     aspect-ratio: 1 / 1;
   }
 
   .brand-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    padding: 3px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    padding: 2px !important;
   }
 
   .brand-grid .brand input {
-    width: 100%;
-    min-width: 0;
-    padding: 5px 0;
-    font-size: 8px;
+    font-size: 8px !important;
     text-align: center;
+    padding: 4px 0;
   }
 
-  /* 4. TOOLS: 5 ỨNG DỤNG CÙNG MỘT HÀNG */
-  .tools-grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: 6px !important;
+  /* 3. CÔNG CỤ: TÊN ỨNG DỤNG SÁT LOGO */
+  .tools-grid .tool {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 8px 3px !important;
+    min-height: 76px !important;
   }
 
-  .tools-grid .tool,
-  .tools-grid .tool:nth-child(n) {
-    grid-column: auto !important;
+  .tools-grid .tool > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px !important;
     width: 100%;
-    min-width: 0;
-    min-height: 85px;
-    padding: 6px 2px;
-    font-size: 9px;
-    overflow-wrap: anywhere;
+    line-height: 1.2;
   }
 
   .tools-grid .tool-logo {
-    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 34px;
+    margin: 0 !important;
   }
 
   .tools-grid .tool-logo img {
-    max-width: 100%;
-    max-height: 35px !important;
-    object-fit: contain;
+    max-height: 30px !important;
+    display: block;
+  }
+
+  .tools-grid .tool > div > div:last-child {
+    margin: 0 !important;
+    padding: 0;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 9px;
   }
 }
 
 /* Điện thoại rất nhỏ */
 @media (max-width: 360px) {
   .community-row {
-    gap: 5px !important;
+    gap: 4px !important;
   }
 
-  .community-row .stat-chip span {
-    font-size: 7px;
-  }
-
-  .koc-grid {
-    gap: 6px !important;
+  .community-row .stat-chip strong {
+    font-size: 18px !important;
   }
 
   .brand-grid {
     gap: 4px !important;
   }
 
-  .tools-grid {
-    gap: 4px !important;
-  }
-
-  .tools-grid .tool {
-    font-size: 8px;
+  .brand-grid .brand input {
+    font-size: 7px !important;
   }
 }
+
 </style></head>
 <body monica-id="ofpnmcalabcbjgholdjcjblkibolbppb" monica-version="9.0.24">
 <header class="topbar"><div class="brandmark">J / N — PORTFOLIO</div><nav class="nav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#live">Live</a><a href="#partnership">Partnership</a><a href="#contact">Contact</a></nav><div class="actions"><button class="btn dark" id="pdfBtn">Export PDF</button></div></header>
