@@ -449,150 +449,60 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
   }
 }
 
-/* ===== MOBILE FINAL POLISH ===== */
+/* ===== FIX KOC & TOOLS MOBILE LAYOUT ===== */
 
 @media (max-width: 800px) {
 
-  /* 1. ẢNH CỘNG ĐỒNG: HIỂN THỊ TRỌN ẢNH */
-  .community-row {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr) minmax(0, 0.85fr) !important;
-    justify-content: center !important;
-    align-items: center !important;
-    justify-items: center !important;
-    gap: 6px !important;
+  /* 7 KOC: 3 NGƯỜI HÀNG TRÊN, 4 NGƯỜI HÀNG DƯỚI */
+  .koc-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 10px 7px !important;
   }
 
-  .community-row .stat-chip {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100%;
-    min-width: 0;
-    padding: 10px 2px !important;
-    box-sizing: border-box;
-  }
-
-  .community-row .stat-chip strong,
-  .community-row .stat-chip span {
-    width: 100%;
-    text-align: center !important;
-  }
-
-  .community-row .community {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-width: 0;
-    margin: 0 !important;
-    padding: 4px !important;
-  }
-
-  .community-row .media-box {
-    width: 100%;
-    aspect-ratio: 4 / 3 !important;
-    min-height: 0 !important;
-    background: #fff;
-    overflow: hidden;
-  }
-
-  .community-row .media-box img {
-    display: block;
+  .koc-grid > .koc {
+    grid-column: span 3 !important;
     width: 100% !important;
-    height: 100% !important;
-    max-width: 100%;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center;
+    min-width: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
-  /* 2. THƯƠNG HIỆU: 6 LOGO MỖI HÀNG */
-  .brand-grid {
+  .koc-grid > .koc:nth-child(1),
+  .koc-grid > .koc:nth-child(2),
+  .koc-grid > .koc:nth-child(3) {
+    grid-column: span 4 !important;
+  }
+
+  /* TOOLS: 2 ỨNG DỤNG TRÊN, 3 ỨNG DỤNG DƯỚI */
+  .tools-grid {
+    display: grid !important;
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
-    gap: 6px !important;
+    gap: 10px !important;
   }
 
-  .brand-grid .brand {
-    padding: 4px !important;
-    min-width: 0;
+  .tools-grid > .tool {
+    grid-column: span 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
-  .brand-logo {
-    aspect-ratio: 1 / 1;
+  .tools-grid > .tool:nth-child(1),
+  .tools-grid > .tool:nth-child(2) {
+    grid-column: span 3 !important;
   }
 
-  .brand-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 2px !important;
+  /* Căn giữa các ứng dụng ở hàng dưới */
+  .tools-grid > .tool:nth-child(3) {
+    grid-column: 1 / span 2 !important;
   }
 
-  .brand-grid .brand input {
-    font-size: 8px !important;
-    text-align: center;
-    padding: 4px 0;
+  .tools-grid > .tool:nth-child(4) {
+    grid-column: 3 / span 2 !important;
   }
 
-  /* 3. CÔNG CỤ: TÊN ỨNG DỤNG SÁT LOGO */
-  .tools-grid .tool {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 8px 3px !important;
-    min-height: 76px !important;
-  }
-
-  .tools-grid .tool > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px !important;
-    width: 100%;
-    line-height: 1.2;
-  }
-
-  .tools-grid .tool-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 34px;
-    margin: 0 !important;
-  }
-
-  .tools-grid .tool-logo img {
-    max-height: 30px !important;
-    display: block;
-  }
-
-  .tools-grid .tool > div > div:last-child {
-    margin: 0 !important;
-    padding: 0;
-    text-align: center;
-    line-height: 1.2;
-    font-size: 9px;
-  }
-}
-
-/* Điện thoại rất nhỏ */
-@media (max-width: 360px) {
-  .community-row {
-    gap: 4px !important;
-  }
-
-  .community-row .stat-chip strong {
-    font-size: 18px !important;
-  }
-
-  .brand-grid {
-    gap: 4px !important;
-  }
-
-  .brand-grid .brand input {
-    font-size: 7px !important;
+  .tools-grid > .tool:nth-child(5) {
+    grid-column: 5 / span 2 !important;
   }
 }
 
@@ -623,4 +533,68 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
 <footer><span>Jayden Nguyen — Personal Portfolio</span><span>Social Commerce / Content / Live</span></footer>
 </main>
 
-<div id="monica-content-root" class="monica-widget" style="pointer-events: auto;"></div><script>function fitName(){const h=document.querySelector('.hero-name');if(!h||!h.clientWidth)return;h.style.fontSize='';let fs=parseFloat(getComputedStyle(h).fontSize);const w=Math.max(...[...h.children].map(c=>{const r=document.createRange();r.selectNodeContents(c);return r.getBoundingClientRect().width}));if(w)fs=Math.max(32,Math.min(150,fs*(h.clientWidth*.96)/w));h.style.fontSize=fs+'px'}function fitRole(){fitName();const r=document.querySelector('.hero-role'),m=r&&r.querySelector('.role-main');if(!m||!r.clientWidth)return;r.style.fontSize='';let fs=parseFloat(getComputedStyle(r).fontSize);const w=m.getBoundingClientRect().width;if(w)fs=Math.max(24,Math.min(96,fs*(r.clientWidth*.98)/w));r.style.fontSize=fs+'px'}document.getElementById('pdfBtn').onclick=()=>window.print();fitRole();addEventListener('resize',fitRole);if(document.fonts)document.fonts.ready.then(fitRole);</script></body><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></html>
+<div id="monica-content-root" class="monica-widget" style="pointer-events: auto;"></div><script>function fitName(){const h=document.querySelector('.hero-name');if(!h||!h.clientWidth)return;h.style.fontSize='';let fs=parseFloat(getComputedStyle(h).fontSize);const w=Math.max(...[...h.children].map(c=>{const r=document.createRange();r.selectNodeContents(c);return r.getBoundingClientRect().width}));if(w)fs=Math.max(32,Math.min(150,fs*(h.clientWidth*.96)/w));h.style.fontSize=fs+'px'}function fitRole(){fitName();const r=document.querySelector('.hero-role'),m=r&&r.querySelector('.role-main');if(!m||!r.clientWidth)return;r.style.fontSize='';let fs=parseFloat(getComputedStyle(r).fontSize);const w=m.getBoundingClientRect().width;if(w)fs=Math.max(24,Math.min(96,fs*(r.clientWidth*.98)/w));r.style.fontSize=fs+'px'}document.getElementById('pdfBtn').onclick=()=>window.print();fitRole();addEventListener('resize',fitRole);if(document.fonts)document.fonts.ready.then(fitRole);
+/* ===== AUTO VIDEO THUMBNAILS ===== */
+
+document.querySelectorAll(
+  '.video-slot video, .live-media video'
+).forEach(video => {
+
+  function createVideoPoster() {
+    if (video.dataset.posterCreated) return;
+    if (!video.videoWidth || !video.videoHeight) return;
+
+    video.dataset.posterCreated = 'true';
+
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const context = canvas.getContext('2d');
+
+    try {
+      context.drawImage(
+        video,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      video.setAttribute(
+        'poster',
+        canvas.toDataURL('image/jpeg', 0.85)
+      );
+
+      video.currentTime = 0;
+
+    } catch (error) {
+      console.warn('Không tạo được ảnh bìa video:', error);
+    }
+  }
+
+  function prepareVideo() {
+    if (video.dataset.posterCreated) return;
+
+    const frameTime = Math.min(0.1, video.duration / 2);
+
+    video.addEventListener(
+      'seeked',
+      createVideoPoster,
+      { once: true }
+    );
+
+    video.currentTime = frameTime;
+  }
+
+  video.addEventListener(
+    'loadedmetadata',
+    prepareVideo,
+    { once: true }
+  );
+
+  if (video.readyState >= 1) {
+    prepareVideo();
+  }
+});
+</script></body><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></html>
