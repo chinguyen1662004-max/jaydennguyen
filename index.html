@@ -448,6 +448,189 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
     opacity: 1;
   }
 }
+
+/* ===== MOBILE FIX - COMMUNITY / KOC / BRANDS / TOOLS ===== */
+
+@media (max-width: 800px) {
+
+  /* 1. COMMUNITY: 700 - ẢNH - 300 CÙNG MỘT HÀNG */
+  .community-row {
+    display: grid !important;
+    grid-template-columns: 0.8fr 1.4fr 0.8fr !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+
+  .community-row .stat-chip {
+    min-width: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 10px 3px;
+    text-align: center;
+    transform: none !important;
+  }
+
+  .community-row .stat-chip strong {
+    display: block;
+    font-size: clamp(19px, 5vw, 27px);
+    line-height: 1.1;
+  }
+
+  .community-row .stat-chip span {
+    display: block;
+    font-size: 8px;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+  }
+
+  .community-row .community {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 5px;
+  }
+
+  .community-row .media-box {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .community-row .media-box img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  /* 2. KOC: 3 NGƯỜI TRÊN - 4 NGƯỜI DƯỚI */
+  .koc-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    align-items: start;
+  }
+
+  .koc-grid .koc {
+    min-width: 0;
+    width: auto;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .koc-grid .koc:nth-child(-n+3) {
+    grid-column: span 4;
+  }
+
+  .koc-grid .koc:nth-child(n+4) {
+    grid-column: span 3;
+  }
+
+  .koc-photo {
+    width: 100%;
+  }
+
+  .koc-grid .koc input {
+    width: 100%;
+    min-width: 0;
+    padding: 7px 1px;
+    font-size: 9px;
+  }
+
+  /* 3. BRAND: 5 THƯƠNG HIỆU MỖI HÀNG */
+  .brand-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+  }
+
+  .brand-grid .brand {
+    min-width: 0;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .brand-logo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 3px;
+    object-fit: contain;
+  }
+
+  .brand-grid .brand input {
+    width: 100%;
+    min-width: 0;
+    padding: 5px 0;
+    font-size: 8px;
+    text-align: center;
+  }
+
+  /* 4. TOOLS: 5 ỨNG DỤNG CÙNG MỘT HÀNG */
+  .tools-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .tools-grid .tool,
+  .tools-grid .tool:nth-child(n) {
+    grid-column: auto !important;
+    width: 100%;
+    min-width: 0;
+    min-height: 85px;
+    padding: 6px 2px;
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+
+  .tools-grid .tool-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tools-grid .tool-logo img {
+    max-width: 100%;
+    max-height: 35px !important;
+    object-fit: contain;
+  }
+}
+
+/* Điện thoại rất nhỏ */
+@media (max-width: 360px) {
+  .community-row {
+    gap: 5px !important;
+  }
+
+  .community-row .stat-chip span {
+    font-size: 7px;
+  }
+
+  .koc-grid {
+    gap: 6px !important;
+  }
+
+  .brand-grid {
+    gap: 4px !important;
+  }
+
+  .tools-grid {
+    gap: 4px !important;
+  }
+
+  .tools-grid .tool {
+    font-size: 8px;
+  }
+}
 </style></head>
 <body monica-id="ofpnmcalabcbjgholdjcjblkibolbppb" monica-version="9.0.24">
 <header class="topbar"><div class="brandmark">J / N — PORTFOLIO</div><nav class="nav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#live">Live</a><a href="#partnership">Partnership</a><a href="#contact">Contact</a></nav><div class="actions"><button class="btn dark" id="pdfBtn">Export PDF</button></div></header>
